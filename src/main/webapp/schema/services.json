@@ -67,6 +67,9 @@
                   "method": {
                      "default": "GET"
                   },
+                  "endpoint": {
+                     "default": "/bulkdownloads"
+                  },
                   "datasource": {
                      "$ref": "#/definitions/datasource"
                   },
