@@ -205,5 +205,13 @@
       "dbName": "travis_test",
       "username": "postgres",
       "password": "postgres"
+   },
+   {
+      "id": "FAOSTATDB2INTERNAL",
+      "driver": "SQLServer2000",
+      "url": "jdbc:sqlserver://HQWPRFAOSTATDB2\\Internal;databaseName=Warehouse_data;",
+      "dbName": "Warehouse",
+      "username": "Warehouse",
+      "password": "w@reh0use"
    }
 ]
