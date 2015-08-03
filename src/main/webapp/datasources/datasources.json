@@ -209,7 +209,7 @@
    {
       "id": "FAOSTATDB2INTERNAL",
       "driver": "SQLServer2000",
-      "url": "jdbc:sqlserver://HQWPRFAOSTATDB2\\Internal;databaseName=Warehouse_data;",
+      "url": "jdbc:sqlserver://HQWPRFAOSTATDB2\\Internal;databaseName=Warehouse;",
       "dbName": "Warehouse",
       "username": "Warehouse",
       "password": "w@reh0use"
