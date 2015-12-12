@@ -287,6 +287,7 @@ public class JDBCConnector {
     }
 
     public static void validate(String sql) throws WDSException {
+        System.out.println("IN VALIDATE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         if (sql.toUpperCase().contains(SQL.INSERT.name()))
             throw new WDSException(SQL.INSERT.name() + " is NOT allowed.");
         if (sql.toUpperCase().contains(SQL.UPDATE.name()) && !sql.toUpperCase().contains(SQL.DATEUPDATE.name()))

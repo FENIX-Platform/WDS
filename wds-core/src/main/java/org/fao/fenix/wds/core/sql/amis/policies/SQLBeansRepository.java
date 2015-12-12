@@ -381,7 +381,7 @@ public class SQLBeansRepository {
         sb.append("SELECT V.\"CPL_ID\", \"Start_Date\" , \"End_Date\", \"Units\", \"Value\",  \"Value_Descr\", ");
         sb.append("V.\"TARGET_HS\", V.\"HS_version\", V.\"HS_suffix\", V.description, \"SubPolicyMeasure_Name\", \"Value_Type\", \"Exemptions_Granted\", \"Commodity_Condition\", ");
         sb.append("\"Subnational_Name\" , \"BechmarkTaxprices\", \"Location_Condition\", ");
-        sb.append("\"Value_calculationordirect\", \"Notes\", \"Purpose_Of_Measure\", \"Measure_Descr\", \"Source\", \"Title_Of_Notice\", ");
+        sb.append("\"Value_calculationordirect\", \"Notes\", \"Purpose_Of_Measure\", \"Measure_Description\", \"Source\", \"Title_Of_Notice\", ");
         sb.append("\"Legal_Basis_Name\", \"Sourcehost\", host, leg, agen, impl, \"Start_Date_Comment\" ");
         // FROM
         sb.append("FROM "+table+ " V,  "+master_table + " M ");
@@ -397,7 +397,7 @@ public class SQLBeansRepository {
         sb.append("GROUP BY V.\"CPL_ID\", \"Start_Date\" , \"End_Date\", \"Units\", \"Value\",  \"Value_Descr\", ");
         sb.append("V.\"TARGET_HS\", V.\"HS_version\", V.\"HS_suffix\", V.description, \"SubPolicyMeasure_Name\", \"Value_Type\", \"Exemptions_Granted\", \"Commodity_Condition\", ");
         sb.append("\"Subnational_Name\" , \"BechmarkTaxprices\", \"Location_Condition\", ");
-        sb.append("\"Value_calculationordirect\", \"Notes\", \"Purpose_Of_Measure\", \"Measure_Descr\", \"Source\", \"Title_Of_Notice\", ");
+        sb.append("\"Value_calculationordirect\", \"Notes\", \"Purpose_Of_Measure\", \"Measure_Description\", \"Source\", \"Title_Of_Notice\", ");
         sb.append("\"Legal_Basis_Name\", \"Sourcehost\", host, leg, agen, impl, \"Start_Date_Comment\" ");
 
 

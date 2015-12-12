@@ -10,8 +10,8 @@
     {
         "id": "POLICY",
         "driver": "PostgreSQL",
-        "url": "jdbc:postgresql://127.0.0.1:5432/amisPolicy3",
-        "dbName": "amisPolicy3",
+        "url": "jdbc:postgresql://127.0.0.1:5432/amisPolicy5",
+        "dbName": "amisPolicy5",
         "username": "policy",
         "password": "1Q2W3E4R5T"
     },

@@ -62,9 +62,13 @@ public class JDBCIterable implements Iterator<List<String>> {
         Class.forName("org.postgresql.Driver");
         this.setConnection(DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword()));
         this.setStatement(this.getConnection().createStatement());
+        System.out.println("Before execute!!!!!");
         this.getStatement().executeQuery(sql);
-        this.setResultSet(this.getStatement().getResultSet());
-
+        System.out.println("this.getStatement().getResultSet()!!!!!");
+        System.out.println(this.getStatement().getResultSet());
+        if(this.getStatement().getResultSet()!=null){
+            this.setResultSet(this.getStatement().getResultSet());
+        }
     }
 
     @Override
@@ -125,8 +129,8 @@ public class JDBCIterable implements Iterator<List<String>> {
     }
 
     public void validate(String sql) throws WDSException {
-        if (sql.toUpperCase().contains(SQL.INSERT.name()))
-            throw new WDSException(SQL.INSERT.name() + " is NOT allowed.");
+//        if (sql.toUpperCase().contains(SQL.INSERT.name()))
+//            throw new WDSException(SQL.INSERT.name() + " is NOT allowed.");
         if (sql.toUpperCase().contains(SQL.UPDATE.name()) && !sql.toUpperCase().contains(SQL.DATEUPDATE.name()))
             throw new WDSException(SQL.UPDATE.name() + " is NOT allowed.");
         if (sql.toUpperCase().contains(SQL.DELETE.name()))
