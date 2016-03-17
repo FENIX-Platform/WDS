@@ -83,6 +83,7 @@ public class USDAClient {
             } else {
 
                 if (userAttributes.isEmpty() && userCountries.isEmpty()) {
+
                     if (USDA.countries.contains(b.getCountryCode()) && USDA.attributes.contains(b.getAttributeID()))
                         l.add(b);
                 }
@@ -121,6 +122,7 @@ public class USDAClient {
         sb.append("\"").append(b.getAttributeDescription()).append("\", ");
         sb.append("\"").append(b.getMarketYear()).append("\", ");
         sb.append("\"").append(b.getMonth()).append("\", ");
+        System.out.println("value: " + b.getValue());
         sb.append(Double.valueOf(b.getValue())).append(", ");
         sb.append(Long.valueOf(b.getUnitID())).append(", ");
         sb.append("\"").append(b.getUnitDescription()).append("\"\n");
@@ -140,7 +142,7 @@ public class USDAClient {
         b.setMonth(XMLTools.readChildTag(xml, "Commodity", "Month", "getDatabyCommodity").trim());
         b.setUnitDescription(XMLTools.readChildTag(xml, "Commodity", "Unit_Description", "getDatabyCommodity").trim());
         b.setUnitID(XMLTools.readChildTag(xml, "Commodity", "Unit_ID", "getDatabyCommodity").trim());
-        b.setValue(Double.valueOf(XMLTools.readChildTag(xml, "Commodity", "Value", "getDatabyCommodity").trim()));
+        b.setValue(Double.valueOf(XMLTools.readChildTag(xml, "Commodity", "value", "getDatabyCommodity").trim()));
         return b;
     }
 

@@ -3,22 +3,22 @@ package org.fao.fenix.wds.core.usda;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 
+/**
  * @author <a href="mailto:guido.barbaglia@fao.org">Guido Barbaglia</a>
  * @author <a href="mailto:guido.barbaglia@gmail.com">Guido Barbaglia</a> 
  * */
 public class USDA {
-	
+
 	public static List<String> attributes;
-	
+
 	public static List<String> commodities;
-	
+
 	public static List<String> allCommodities;
-	
+
 	public static List<String> countries;
-	
+
 	static {
-		
+
 		// Attributes
 		attributes = new ArrayList<String>();
 //		attributes.add("001");						// Area Planted
@@ -43,20 +43,20 @@ public class USDA {
 		attributes.add("149");						// Food Use Dom. Cons.
 //		attributes.add("150");						// Loss Dom. Consumption
 //		attributes.add("151");						// Other Disappearance
-//      attributes.add("161");						// Feed Waste Dom. Cons. (1000 MT)
+		attributes.add("161");						// Feed Waste Dom. Cons. (1000 MT)
 //		attributes.add("173");						// Total Disappearance
 //		attributes.add("174");						// Total Use
 		attributes.add("176");						// Ending Stocks
-//		attributes.add("178");						// Total Distribution
+		attributes.add("178");						// Total Distribution
 //		attributes.add("181");						// Extr. Rate, 999.9999
 		attributes.add("182");						// Milling Rate (.9999)
 		attributes.add("184");						// Yield
 		attributes.add("192");						// FSI Consumption
 //		attributes.add("195");						// Stocks-to-Use
 //		attributes.add("212");						// Per Capita Consumption
-        attributes.add("130");						// Feed Waste Dom. Cons.
-        attributes.add("113");						// TY Exports
-		
+		attributes.add("130");						// Feed Waste Dom. Cons.
+		attributes.add("113");						// TY Exports
+
 		// Commodities
 		commodities = new ArrayList<String>();
 		commodities.add("0410000");					// Wheat
@@ -67,17 +67,17 @@ public class USDA {
 //        commodities.add("901");					    // Coarse Grains
 //        commodities.add("900");					    // Total Cereals
 //        commodities.add("903");
-		
+
 		// all commodities
 		allCommodities = new ArrayList<String>();
-        allCommodities.add("0410000");
+		allCommodities.add("0410000");
 //        allCommodities.add("0411000");                // Error
-        allCommodities.add("0422110");
-        allCommodities.add("0440000");
-        allCommodities.add("2222000");
-        allCommodities.add("901");
-        allCommodities.add("900");
-        allCommodities.add("903");
+		allCommodities.add("0422110");
+		allCommodities.add("0440000");
+		allCommodities.add("2222000");
+		allCommodities.add("901");
+		allCommodities.add("900");
+		allCommodities.add("903");
 //		allCommodities.add("0011000");					// "Animal Numbers, Cattle"
 //		allCommodities.add("0013000");					// "Animal Numbers, Swine"
 //		allCommodities.add("0111000");					// "Meat, Beef and Veal"
@@ -172,8 +172,8 @@ public class USDA {
 //		allCommodities.add("4242000");					// "Oil, Coconut"
 //		allCommodities.add("4243000");					// "Oil, Palm"
 //		allCommodities.add("4244000");					// "Oil, Palm Kernel"
-		
-		
+
+
 		// Countries
 		countries = new ArrayList<String>();
 		countries.add("AR");						// Argentina
@@ -206,7 +206,7 @@ public class USDA {
 		countries.add("E4");						// EU-27
 		countries.add("**");						// World
 		countries.add("TW");						// Taiwan
-		
+
 	}
 
 }

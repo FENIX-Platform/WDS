@@ -1,33 +1,33 @@
 package org.fao.fenix.wds.core.usda;
 
-/** 
+/**
  * @author <a href="mailto:guido.barbaglia@fao.org">Guido Barbaglia</a>
  * @author <a href="mailto:guido.barbaglia@gmail.com">Guido Barbaglia</a> 
  * */
 public class USDABean {
 
 	private String commodityCode;
-	
+
 	private String commodityDescription;
-	
+
 	private String countryCode;
-	
+
 	private String countryName;
-	
+
 	private String marketYear;
-	
+
 	private String calendarYear;
-	
+
 	private String month;
-	
+
 	private String attributeID;
-	
+
 	private String attributeDescription;
-	
+
 	private String unitID;
-	
+
 	private String unitDescription;
-	
+
 	private Double value;
 
 	public String getCommodityCode() {
@@ -129,17 +129,17 @@ public class USDABean {
 	@Override
 	public String toString() {
 		return "Attribute Description: " + this.getAttributeDescription() + ", " +
-			   "Attribute ID: " + this.getAttributeID() + ", " +
-			   "Calendar Year: " + this.getCalendarYear() + ", " +
-			   "Commodity Code: " + this.getCommodityCode() + ", " + 
-			   "Commodity Description: " + this.getCommodityDescription() + ", " + 
-			   "Country Code: " + this.getCountryCode() + ", " + 
-			   "Country Name: " + this.getCountryName() + ", " + 
-			   "Market Year: " + this.getMarketYear() + ", " + 
-			   "Month: " + this.getMonth() + ", " + 
-			   "Unit Description: " + this.getUnitDescription() + ", " + 
-			   "Unit ID: " + this.getUnitID() + ", " + 
-			   "Value: " + this.getValue();
+				"Attribute ID: " + this.getAttributeID() + ", " +
+				"Calendar Year: " + this.getCalendarYear() + ", " +
+				"Commodity Code: " + this.getCommodityCode() + ", " +
+				"Commodity Description: " + this.getCommodityDescription() + ", " +
+				"Country Code: " + this.getCountryCode() + ", " +
+				"Country Name: " + this.getCountryName() + ", " +
+				"Market Year: " + this.getMarketYear() + ", " +
+				"Month: " + this.getMonth() + ", " +
+				"Unit Description: " + this.getUnitDescription() + ", " +
+				"Unit ID: " + this.getUnitID() + ", " +
+				"Value: " + this.getValue();
 	}
-	
+
 }
