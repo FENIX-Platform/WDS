@@ -193,10 +193,11 @@ public class WDSRESTService extends HttpServlet implements Servlet {
 	}
 	
 	private String parseUSDA(Map<String,String[]> parameters) throws WDSException {
-		List<List<String>> table = WSConnector.queryUSDA(parameters); 
+		String filename = !parameters.get("year").equals(null) && parameters.get("year").length >0 ? parameters.get("year")[0]: null;
+		List<List<String>> table = WSConnector.queryUSDA(parameters);
 		if (table.size() < 2)
 			throw new WDSException("No data found. Please check your codes.");
-		return formatOutput(table, null);
+		return formatOutput(table, filename);
 	}
 	
 	private String parseJDBC(Map<String,String[]> parameters) throws IllegalAccessException, InstantiationException, SQLException, WDSException, ClassNotFoundException {
