@@ -1,5 +1,6 @@
 package org.fao.fenix.wds.core.usda;
 
+import org.apache.log4j.Logger;
 import org.fao.fenix.wds.core.exception.WDSException;
 import org.fao.fenix.wds.core.xml.XMLTools;
 
@@ -11,22 +12,31 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author <a href="mailto:guido.barbaglia@fao.org">Guido Barbaglia</a>
- * @author <a href="mailto:guido.barbaglia@gmail.com">Guido Barbaglia</a> 
- * */
 public class USDAClient {
 
-//    private final String WS_URL = "http://www.fas.usda.gov/wsfapsd/svcPSD_AMIS.asmx";
+    private static final Logger LOGGER = Logger.getLogger(USDAClient.class);
+
+    private final String REQUEST_PAYLOAD_COMMODITY = "getDatabyCommodityPerYear";
+    private final String REQUEST_PAYLOAD_COMMODITY_WORLD = "getWorldDatabyCommodityPerYear";
+
+    private final String ROOT_XML_WORLD = "getWorldDatabyCommodity";
+    private final String ROOT_XML_COMMODITY = "getDatabyCommodity";
+
+    private final String ROOT_BEAN_WORLD = "getWorldDatabyCommodityResult";
+    private final String ROOT_BEAN_COMMODITY = "getDatabyCommodity";
 
     private final String WS_URL = "http://apps.fas.usda.gov/wsfapsd/svcPSD_AMIS.asmx";
 
-//    private final String ACTION = "http://www.fas.usda.gov/wsfapsd/getDatabyCommodityPerYear";
-
     private final String ACTION = "http://apps.fas.usda.gov/wsfapsd/getDatabyCommodityPerYear";
+    private final String ACTION_WORLD = "http://apps.fas.usda.gov/wsfapsd/getWorldDatabyCommodityPerYear";
 
-    public List<USDABean> getDataByCommodity(String commodityCode, String year, List<String> userCountries, List<String> userAttributes) throws WDSException {
-        System.out.println("Processing commodityCode: " + commodityCode);
+    private boolean isWorldService;
+
+
+    public List<USDABean> getDataByCommodity(String commodityCode, String year, List<String> userCountries, List<String> userAttributes, boolean isWorldService) throws WDSException {
+        LOGGER.info("Processing commodityCode: " + commodityCode);
+
+        this.isWorldService = isWorldService;
         try {
             HttpURLConnection connection = buildConnection();
             OutputStream out = connection.getOutputStream();
@@ -34,7 +44,9 @@ public class USDAClient {
             writeRequest(wout, commodityCode, year);
             StringBuilder sb = new StringBuilder();
             BufferedReader in = null;
+            LOGGER.info("the response of connection is: " + connection.getResponseCode());
             if (connection.getResponseCode() == 200) {
+
                 in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             } else {
                 in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
@@ -54,6 +66,7 @@ public class USDAClient {
         }
     }
 
+
     public String print(List<USDABean> l) {
         StringBuilder sb = new StringBuilder();
         sb.append("\"Cn_code\", \"Country\", \"Cm_code\", \"Commodity\", \"Attribute_id\", \"Attribute\", \"Year\", \"Month\", \"Value\", \"Unit_code\", \"Unit\"\n");
@@ -64,12 +77,15 @@ public class USDAClient {
 
     public List<USDABean> parseUSDAXML(StringBuilder sb, List<String> userCountries, List<String> userAttributes) throws WDSException {
 
+        String rootBean = (this.isWorldService) ? ROOT_BEAN_WORLD : ROOT_BEAN_COMMODITY;
         long t0 = System.currentTimeMillis();
-
-        List<USDABean> l = new ArrayList<USDABean>();
+        LOGGER.info("start parsing in : " + t0);
+        List<USDABean> beans = new ArrayList<USDABean>();
         String xml = extractPayload(sb.toString());
+
+        LOGGER.info("the xml lenght is: " + xml.length());
         String[] tags = new String[]{"Commodity"};
-        List<String> subs = XMLTools.subXML(xml, tags, "getDatabyCommodity");
+        List<String> subs = XMLTools.subXML(xml, tags, rootBean);
 
         for (String sub : subs) {
 
@@ -78,38 +94,35 @@ public class USDAClient {
             // avoid filters
             if (userCountries == null && userAttributes == null) {
 
-                l.add(b);
+                beans.add(b);
 
             } else {
 
                 if (userAttributes.isEmpty() && userCountries.isEmpty()) {
 
                     if (USDA.countries.contains(b.getCountryCode()) && USDA.attributes.contains(b.getAttributeID()))
-                        l.add(b);
+                        beans.add(b);
                 }
 
                 if (userAttributes.isEmpty() && !userCountries.isEmpty()) {
                     if (userCountries.contains(b.getCountryCode()) && USDA.attributes.contains(b.getAttributeID()))
-                        l.add(b);
+                        beans.add(b);
                 }
 
                 if (!userAttributes.isEmpty() && !userCountries.isEmpty()) {
                     if (userCountries.contains(b.getCountryCode()) && userAttributes.contains(b.getAttributeID()))
-                        l.add(b);
+                        beans.add(b);
                 }
 
                 if (!userAttributes.isEmpty() && !userCountries.isEmpty()) {
                     if (userCountries.contains(b.getCountryCode()) && userAttributes.contains(b.getAttributeID()))
-                        l.add(b);
+                        beans.add(b);
                 }
-
             }
 
         }
 
-        long t1 = System.currentTimeMillis();
-
-        return l;
+        return beans;
     }
 
     public StringBuilder print(USDABean b) {
@@ -130,26 +143,29 @@ public class USDAClient {
     }
 
     public USDABean parseUSDABean(String xml) {
+
+        String rootBean = (this.isWorldService) ? ROOT_BEAN_WORLD : ROOT_BEAN_COMMODITY;
         USDABean b = new USDABean();
-        b.setAttributeDescription(XMLTools.readChildTag(xml, "Commodity", "Attribute_Description", "getDatabyCommodity").trim());
-        b.setAttributeID(XMLTools.readChildTag(xml, "Commodity", "Atrribute_ID", "getDatabyCommodity").trim());
-        b.setCalendarYear(XMLTools.readChildTag(xml, "Commodity", "Calendar_Year", "getDatabyCommodity").trim());
-        b.setCommodityDescription(XMLTools.readChildTag(xml, "Commodity", "Commodity_Description", "getDatabyCommodity").trim());
-        b.setCommodityCode(XMLTools.readChildTag(xml, "Commodity", "Commodity_Code", "getDatabyCommodity").trim());
-        b.setCountryCode(XMLTools.readChildTag(xml, "Commodity", "Country_Code", "getDatabyCommodity").trim());
-        b.setCountryName(XMLTools.readChildTag(xml, "Commodity", "Country_Name", "getDatabyCommodity").trim());
-        b.setMarketYear(XMLTools.readChildTag(xml, "Commodity", "Market_Year", "getDatabyCommodity").trim());
-        b.setMonth(XMLTools.readChildTag(xml, "Commodity", "Month", "getDatabyCommodity").trim());
-        b.setUnitDescription(XMLTools.readChildTag(xml, "Commodity", "Unit_Description", "getDatabyCommodity").trim());
-        b.setUnitID(XMLTools.readChildTag(xml, "Commodity", "Unit_ID", "getDatabyCommodity").trim());
-        b.setValue(Double.valueOf(XMLTools.readChildTag(xml, "Commodity", "value", "getDatabyCommodity").trim()));
+        b.setAttributeDescription(XMLTools.readChildTag(xml, "Commodity", "Attribute_Description", rootBean).trim());
+        b.setAttributeID(XMLTools.readChildTag(xml, "Commodity", "Atrribute_ID", rootBean).trim());
+        b.setCalendarYear(XMLTools.readChildTag(xml, "Commodity", "Calendar_Year", rootBean).trim());
+        b.setCommodityDescription(XMLTools.readChildTag(xml, "Commodity", "Commodity_Description", rootBean).trim());
+        b.setCommodityCode(XMLTools.readChildTag(xml, "Commodity", "Commodity_Code", rootBean).trim());
+        b.setCountryCode(XMLTools.readChildTag(xml, "Commodity", "Country_Code", rootBean).trim());
+        b.setCountryName(XMLTools.readChildTag(xml, "Commodity", "Country_Name", rootBean).trim());
+        b.setMarketYear(XMLTools.readChildTag(xml, "Commodity", "Market_Year", rootBean).trim());
+        b.setMonth(XMLTools.readChildTag(xml, "Commodity", "Month", rootBean).trim());
+        b.setUnitDescription(XMLTools.readChildTag(xml, "Commodity", "Unit_Description", rootBean).trim());
+        b.setUnitID(XMLTools.readChildTag(xml, "Commodity", "Unit_ID", rootBean).trim());
+        b.setValue(Double.valueOf(XMLTools.readChildTag(xml, "Commodity", "value", rootBean).trim()));
         return b;
     }
 
     public String extractPayload(String xml) throws WDSException {
-//        System.out.println(xml);
-        int idx_1 = xml.indexOf("<getDatabyCommodity ");
-        int idx_2 = "</getDatabyCommodity>".length() + xml.indexOf("</getDatabyCommodity>");
+        System.out.println(xml);
+        String root = (this.isWorldService) ? ROOT_XML_WORLD : ROOT_XML_COMMODITY;
+        int idx_1 = xml.indexOf("<" + root + " xmlns=\"\">");
+        int idx_2 = ("</" + root + ">").length() + xml.indexOf("</" + root + ">");
         if (idx_1 > -1 && idx_2 > -1)
             return xml.substring(idx_1, idx_2);
         else
@@ -158,21 +174,13 @@ public class USDAClient {
 
     private void writeRequest(Writer wout, String commodityCode, String year) throws IOException {
 
-//        wout.write("<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wsf=\"http://www.fas.usda.gov/wsfaspsd/\">");
-//        wout.write("<soap:Header/>");
-//        wout.write("<soap:Body>");
-//        wout.write("<wsf:getDatabyCommodity>");
-//        wout.write("<wsf:strCommodityCode>" + commodityCode + "</wsf:strCommodityCode>");
-//        wout.write("</wsf:getDatabyCommodity>");
-//        wout.write("</soap:Body>");
-//        wout.write("</soap:Envelope>");
-
+        String servicePayload = (this.isWorldService) ? REQUEST_PAYLOAD_COMMODITY_WORLD : REQUEST_PAYLOAD_COMMODITY;
         wout.write("<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">");
         wout.write("<soap:Body>");
-        wout.write("<getDatabyCommodityPerYear xmlns=\"http://www.fas.usda.gov/wsfaspsd/\">");
+        wout.write("<" + servicePayload + " xmlns=\"http://www.fas.usda.gov/wsfaspsd/\">");
         wout.write("<strCommodityCode>" + commodityCode + "</strCommodityCode>");
         wout.write("<strYear>" + year + "</strYear>");
-        wout.write("</getDatabyCommodityPerYear>");
+        wout.write("</" + servicePayload + ">");
         wout.write("</soap:Body>");
         wout.write("</soap:Envelope>");
 
@@ -182,13 +190,14 @@ public class USDAClient {
     }
 
     private HttpURLConnection buildConnection() throws MalformedURLException, IOException {
+        String action = (this.isWorldService) ? ACTION_WORLD : ACTION;
         URL u = new URL(WS_URL);
         URLConnection uc = u.openConnection();
         HttpURLConnection c = (HttpURLConnection) uc;
         c.setDoOutput(true);
         c.setDoInput(true);
         c.setRequestMethod("POST");
-        c.setRequestProperty("action", ACTION);
+        c.setRequestProperty("action", action);
         c.setRequestProperty("Content-Type", "text/xml");
         c.setRequestProperty("charset", "UTF-8");
         return c;

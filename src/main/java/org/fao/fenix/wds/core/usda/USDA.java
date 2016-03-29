@@ -3,81 +3,77 @@ package org.fao.fenix.wds.core.usda;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author <a href="mailto:guido.barbaglia@fao.org">Guido Barbaglia</a>
- * @author <a href="mailto:guido.barbaglia@gmail.com">Guido Barbaglia</a> 
- * */
 public class USDA {
 
-	public static List<String> attributes;
+    public static List<String> attributes;
 
-	public static List<String> commodities;
+    public static List<String> commodities;
 
-	public static List<String> allCommodities;
+    public static List<String> allCommodities;
 
-	public static List<String> countries;
+    public static List<String> countries;
 
-	static {
+    static {
 
-		// Attributes
-		attributes = new ArrayList<String>();
+        // Attributes
+        attributes = new ArrayList<String>();
 //		attributes.add("001");						// Area Planted
-		attributes.add("004");						// Area Harvested
-		attributes.add("007");						// Crush
-		attributes.add("020");						// Beginning Stocks
+        attributes.add("004");                        // Area Harvested
+        attributes.add("007");                        // Crush
+        attributes.add("020");                        // Beginning Stocks
 //		attributes.add("022");						// Sow Beginning Stocks
-		attributes.add("028");						// Production
+        attributes.add("028");                        // Production
 //		attributes.add("054");						// Rough Production
-		attributes.add("057");						// Imports
+        attributes.add("057");                        // Imports
 //		attributes.add("064");						// Raw Imports
 //		attributes.add("071");						// Other Imports
-		attributes.add("081");						// TY Imports
-		attributes.add("086");						// Total Supply
-		attributes.add("088");						// Exports
+        attributes.add("081");                        // TY Imports
+        attributes.add("086");                        // Total Supply
+        attributes.add("088");                        // Exports
 //		attributes.add("113");						// TY Exports
-		attributes.add("125");						// Domestic Consumption
+        attributes.add("125");                        // Domestic Consumption
 //		attributes.add("126");						// Total Disappearance
 //		attributes.add("130");						// Feed Dom. Consumption
 //		attributes.add("139");						// Human Dom. Consumption
 //		attributes.add("142");						// USE Dom. Consumption
-		attributes.add("149");						// Food Use Dom. Cons.
+        attributes.add("149");                        // Food Use Dom. Cons.
 //		attributes.add("150");						// Loss Dom. Consumption
 //		attributes.add("151");						// Other Disappearance
-		attributes.add("161");						// Feed Waste Dom. Cons. (1000 MT)
+        attributes.add("161");                        // Feed Waste Dom. Cons. (1000 MT)
 //		attributes.add("173");						// Total Disappearance
 //		attributes.add("174");						// Total Use
-		attributes.add("176");						// Ending Stocks
-		attributes.add("178");						// Total Distribution
+        attributes.add("176");                        // Ending Stocks
+        attributes.add("178");                        // Total Distribution
 //		attributes.add("181");						// Extr. Rate, 999.9999
-		attributes.add("182");						// Milling Rate (.9999)
-		attributes.add("184");						// Yield
-		attributes.add("192");						// FSI Consumption
+        attributes.add("182");                        // Milling Rate (.9999)
+        attributes.add("184");                        // Yield
+        attributes.add("192");                        // FSI Consumption
 //		attributes.add("195");						// Stocks-to-Use
 //		attributes.add("212");						// Per Capita Consumption
-		attributes.add("130");						// Feed Waste Dom. Cons.
-		attributes.add("113");						// TY Exports
+        attributes.add("130");                        // Feed Waste Dom. Cons.
+        attributes.add("113");                        // TY Exports
 
-		// Commodities
-		commodities = new ArrayList<String>();
-		commodities.add("0410000");					// Wheat
+        // Commodities
+        commodities = new ArrayList<String>();
+        commodities.add("0410000");                    // Wheat
 //		commodities.add("0411000");					// Wheat, Durum
-		commodities.add("0422110");					// Rice, Milled
-		commodities.add("0440000");					// Corn
-		commodities.add("2222000");					// Oilseed, Soybean
+        commodities.add("0422110");                    // Rice, Milled
+        commodities.add("0440000");                    // Corn
+        commodities.add("2222000");                    // Oilseed, Soybean
 //        commodities.add("901");					    // Coarse Grains
 //        commodities.add("900");					    // Total Cereals
 //        commodities.add("903");
 
-		// all commodities
-		allCommodities = new ArrayList<String>();
-		allCommodities.add("0410000");
+        // all commodities
+        allCommodities = new ArrayList<String>();
+        allCommodities.add("0410000");
 //        allCommodities.add("0411000");                // Error
-		allCommodities.add("0422110");
-		allCommodities.add("0440000");
-		allCommodities.add("2222000");
-		allCommodities.add("901");
-		allCommodities.add("900");
-		allCommodities.add("903");
+        allCommodities.add("0422110");
+        allCommodities.add("0440000");
+        allCommodities.add("2222000");
+        allCommodities.add("901");
+        allCommodities.add("900");
+        allCommodities.add("903");
 //		allCommodities.add("0011000");					// "Animal Numbers, Cattle"
 //		allCommodities.add("0013000");					// "Animal Numbers, Swine"
 //		allCommodities.add("0111000");					// "Meat, Beef and Veal"
@@ -174,39 +170,39 @@ public class USDA {
 //		allCommodities.add("4244000");					// "Oil, Palm Kernel"
 
 
-		// Countries
-		countries = new ArrayList<String>();
-		countries.add("AR");						// Argentina
-		countries.add("AS");						// Australia
-		countries.add("BR");						// Brazil
-		countries.add("CA");						// Canada
-		countries.add("EG");						// Egypt
-		countries.add("IN");						// India
-		countries.add("ID");						// Indonesia
-		countries.add("JA");						// Japan
-		countries.add("KZ");						// Kazakhstan
-		countries.add("MX");						// Mexico
-		countries.add("NI");						// Nigeria
-		countries.add("RP");						// Philippines
-		countries.add("SA");						// Saudi Arabia
-		countries.add("SF");						// South Africa
-		countries.add("TH");						// Thailand
-		countries.add("TU");						// Turkey
-		countries.add("UP");						// Ukraine
-		countries.add("CH");						// China
-		countries.add("FR");						// France
-		countries.add("GE");						// Germany
-		countries.add("IT");						// Italy
-		countries.add("KS");						// Korea, South
-		countries.add("RS");						// Russia
-		countries.add("SP");						// Spain
-		countries.add("UK");						// United Kingdom
-		countries.add("US");						// United States
-		countries.add("VM");						// Vietnam
-		countries.add("E4");						// EU-27
-		countries.add("**");						// World
-		countries.add("TW");						// Taiwan
+        // Countries
+        countries = new ArrayList<String>();
+        countries.add("AR");                        // Argentina
+        countries.add("AS");                        // Australia
+        countries.add("BR");                        // Brazil
+        countries.add("CA");                        // Canada
+        countries.add("EG");                        // Egypt
+        countries.add("IN");                        // India
+        countries.add("ID");                        // Indonesia
+        countries.add("JA");                        // Japan
+        countries.add("KZ");                        // Kazakhstan
+        countries.add("MX");                        // Mexico
+        countries.add("NI");                        // Nigeria
+        countries.add("RP");                        // Philippines
+        countries.add("SA");                        // Saudi Arabia
+        countries.add("SF");                        // South Africa
+        countries.add("TH");                        // Thailand
+        countries.add("TU");                        // Turkey
+        countries.add("UP");                        // Ukraine
+        countries.add("CH");                        // China
+        countries.add("FR");                        // France
+        countries.add("GE");                        // Germany
+        countries.add("IT");                        // Italy
+        countries.add("KS");                        // Korea, South
+        countries.add("RS");                        // Russia
+        countries.add("SP");                        // Spain
+        countries.add("UK");                        // United Kingdom
+        countries.add("US");                        // United States
+        countries.add("VM");                        // Vietnam
+        countries.add("E4");                        // EU-27
+        countries.add("00");                        // World
+        countries.add("TW");                        // Taiwan
 
-	}
+    }
 
 }
