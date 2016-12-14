@@ -25,10 +25,10 @@ public class USDAClient {
     private final String ROOT_BEAN_WORLD = "getWorldDatabyCommodityResult";
     private final String ROOT_BEAN_COMMODITY = "getDatabyCommodity";
 
-    private final String WS_URL = "http://apps.fas.usda.gov/wsfapsd/svcPSD_AMIS.asmx";
+    private final String WS_URL = "https://apps.fas.usda.gov/wsfapsd/svcPSD_AMIS.asmx";
 
-    private final String ACTION = "http://apps.fas.usda.gov/wsfapsd/getDatabyCommodityPerYear";
-    private final String ACTION_WORLD = "http://apps.fas.usda.gov/wsfapsd/getWorldDatabyCommodityPerYear";
+    private final String ACTION = "https://apps.fas.usda.gov/wsfapsd/getDatabyCommodityPerYear";
+    private final String ACTION_WORLD = "https://apps.fas.usda.gov/wsfapsd/getWorldDatabyCommodityPerYear";
 
     private boolean isWorldService;
 
