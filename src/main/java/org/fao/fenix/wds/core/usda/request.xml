@@ -1,0 +1,263 @@
+
+
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+    <getWorldDatabyCommodityPerYear xmlns="http://www.fas.usda.gov/wsfaspsd/">
+        <strCommodityCode>0410000</strCommodityCode>
+        <strYear>2010</strYear>
+    </getWorldDatabyCommodityPerYear>
+</soap:Body>
+</soap:Envelope>
+
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+    <getWorldDatabyCommodityPerYear xmlns="http://www.fas.usda.gov/wsfaspsd/">
+        <strCommodityCode>0410000</strCommodityCode>
+        <strYear>2010</strYear>
+    </getWorldDatabyCommodityPerYear>
+</soap:Body>
+</soap:Envelope>
+
+        <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+                                                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                                             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body>
+    <getWorldDatabyCommodityPerYearResponse xmlns="http://www.fas.usda.gov/wsfaspsd/">
+        <getWorldDatabyCommodityPerYearResult>
+            <getWorldDatabyCommodity xmlns="">
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>004</Atrribute_ID>
+                    <Attribute_Description>Area Harvested</Attribute_Description>
+                    <Unit_ID>04</Unit_ID>
+                    <Unit_Description>(1000 HA)</Unit_Description>
+                    <value>216906.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>020</Atrribute_ID>
+                    <Attribute_Description>Beginning Stocks</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>203211.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>028</Atrribute_ID>
+                    <Attribute_Description>Production</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>649321.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>057</Atrribute_ID>
+                    <Attribute_Description>Imports</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>131990.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>081</Atrribute_ID>
+                    <Attribute_Description>TY Imports</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>131007.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>084</Atrribute_ID>
+                    <Attribute_Description>TY Imp. from U.S.</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>34954.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>086</Atrribute_ID>
+                    <Attribute_Description>Total Supply</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>984522.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>088</Atrribute_ID>
+                    <Attribute_Description>Exports</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>132723.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>113</Atrribute_ID>
+                    <Attribute_Description>TY Exports</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>134063.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>125</Atrribute_ID>
+                    <Attribute_Description>Domestic Consumption</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>653134.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>130</Atrribute_ID>
+                    <Attribute_Description>Feed Dom. Consumption</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>116799.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>176</Atrribute_ID>
+                    <Attribute_Description>Ending Stocks</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>198665.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>178</Atrribute_ID>
+                    <Attribute_Description>Total Distribution</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>984522.0000</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>184</Atrribute_ID>
+                    <Attribute_Description>Yield</Attribute_Description>
+                    <Unit_ID>26</Unit_ID>
+                    <Unit_Description>(MT/HA)</Unit_Description>
+                    <value>2.9936</value>
+                </Commodity>
+                <Commodity>
+                    <Commodity_Code>0410000</Commodity_Code>
+                    <Commodity_Description>Wheat</Commodity_Description>
+                    <Country_Code>00</Country_Code>
+                    <Country_Name>WORLD</Country_Name>
+                    <Market_Year>2010</Market_Year>
+                    <Calendar_Year>2016</Calendar_Year>
+                    <Month>03</Month>
+                    <Atrribute_ID>192</Atrribute_ID>
+                    <Attribute_Description>FSI Consumption</Attribute_Description>
+                    <Unit_ID>08</Unit_ID>
+                    <Unit_Description>(1000 MT)</Unit_Description>
+                    <value>536335.0000</value>
+                </Commodity>
+            </getWorldDatabyCommodity>
+        </getWorldDatabyCommodityPerYearResult>
+    </getWorldDatabyCommodityPerYearResponse>
+</soap:Body>
+</soap:Envelope>
+
+<getWorldDatabyCommodity xmlns=""><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>004</Atrribute_ID><Attribute_Description>Area Harvested                </Attribute_Description><Unit_ID>04</Unit_ID><Unit_Description>(1000 HA)           </Unit_Description><value>216906.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>020</Atrribute_ID><Attribute_Description>Beginning Stocks              </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>203211.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>028</Atrribute_ID><Attribute_Description>Production                    </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>649321.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>057</Atrribute_ID><Attribute_Description>Imports                       </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>131990.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>081</Atrribute_ID><Attribute_Description>TY Imports                    </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>131007.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>084</Atrribute_ID><Attribute_Description>TY Imp. from U.S.             </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>34954.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>086</Atrribute_ID><Attribute_Description>Total Supply                  </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>984522.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>088</Atrribute_ID><Attribute_Description>Exports                       </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>132723.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>113</Atrribute_ID><Attribute_Description>TY Exports                    </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>134063.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>125</Atrribute_ID><Attribute_Description>Domestic Consumption          </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>653134.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>130</Atrribute_ID><Attribute_Description>Feed Dom. Consumption         </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>116799.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>176</Atrribute_ID><Attribute_Description>Ending Stocks                 </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>198665.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>178</Atrribute_ID><Attribute_Description>Total Distribution            </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>984522.0000</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>184</Atrribute_ID><Attribute_Description>Yield                         </Attribute_Description><Unit_ID>26</Unit_ID><Unit_Description>(MT/HA)             </Unit_Description><value>2.9936</value></Commodity><Commodity><Commodity_Code>0410000</Commodity_Code><Commodity_Description>Wheat                         </Commodity_Description><Country_Code>00</Country_Code><Country_Name>WORLD</Country_Name><Market_Year>2010</Market_Year><Calendar_Year>2016</Calendar_Year><Month>03</Month><Atrribute_ID>192</Atrribute_ID><Attribute_Description>FSI Consumption               </Attribute_Description><Unit_ID>08</Unit_ID><Unit_Description>(1000 MT)           </Unit_Description><value>536335.0000</value></Commodity></getWorldDatabyCommodity>
+
+<getWorldDatabyCommodityResult>
+<Commodity>
+    <Commodity_Code>0410000</Commodity_Code>
+    <Commodity_Description>Wheat</Commodity_Description>
+    <Country_Code>00</Country_Code>
+    <Country_Name>WORLD</Country_Name>
+    <Market_Year>2010</Market_Year>
+    <Calendar_Year>2016</Calendar_Year>
+    <Month>03</Month>
+    <Atrribute_ID>004</Atrribute_ID>
+    <Attribute_Description>Area Harvested</Attribute_Description>
+    <Unit_ID>04</Unit_ID>
+    <Unit_Description>(1000 HA)</Unit_Description>
+    <value>216906.0000</value>
+</Commodity>
+</getWorldDatabyCommodityResult>
