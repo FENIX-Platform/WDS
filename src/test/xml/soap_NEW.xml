@@ -1,0 +1,15 @@
+<getDatabyCommodity>
+    <Commodity>
+        <Commodity_code>0410000</Commodity_code>
+        <Commodity_Description>Wheat</Commodity_Description>
+        <Country_Code>AF</Country_Code>
+        <Country_Name>Afghanistan</Country_Name>
+        <Market_Year>2000</Market_Year>
+        <Month>07</Month>
+        <Attribute_Id>4</Attribute_Id>
+        <Attribute_Description>Area Harvested</Attribute_Description>
+        <Unit_Id>4</Unit_Id>
+        <Unit_Description>(1000 HA)</Unit_Description>
+        <Value>2029.0000</Value>
+    </Commodity>
+</getDatabyCommodity>

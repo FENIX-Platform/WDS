@@ -25,7 +25,9 @@ public class USDAClient {
     private final String ROOT_BEAN_WORLD = "getWorldDatabyCommodityResult";
     private final String ROOT_BEAN_COMMODITY = "getDatabyCommodity";
 
-    private final String WS_URL = "https://apps.fas.usda.gov/wsfapsd/svcPSD_AMIS.asmx";
+    //private final String WS_URL = "https://apps.fas.usda.gov/wsfapsd/svcPSD_AMIS.asmx";
+    private final String WS_URL = "https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx";
+
 
     private final String ACTION = "https://apps.fas.usda.gov/wsfapsd/getDatabyCommodityPerYear";
     private final String ACTION_WORLD = "https://apps.fas.usda.gov/wsfapsd/getWorldDatabyCommodityPerYear";
@@ -147,17 +149,17 @@ public class USDAClient {
         String rootBean = (this.isWorldService) ? ROOT_BEAN_WORLD : ROOT_BEAN_COMMODITY;
         USDABean b = new USDABean();
         b.setAttributeDescription(XMLTools.readChildTag(xml, "Commodity", "Attribute_Description", rootBean).trim());
-        b.setAttributeID(XMLTools.readChildTag(xml, "Commodity", "Atrribute_ID", rootBean).trim());
-        b.setCalendarYear(XMLTools.readChildTag(xml, "Commodity", "Calendar_Year", rootBean).trim());
+        b.setAttributeID(XMLTools.readChildTag(xml, "Commodity", "Attribute_Id", rootBean).trim());
+        b.setCalendarYear(XMLTools.readChildTag(xml, "Commodity", "Market_Year", rootBean).trim());
         b.setCommodityDescription(XMLTools.readChildTag(xml, "Commodity", "Commodity_Description", rootBean).trim());
-        b.setCommodityCode(XMLTools.readChildTag(xml, "Commodity", "Commodity_Code", rootBean).trim());
+        b.setCommodityCode(XMLTools.readChildTag(xml, "Commodity", "Commodity_code", rootBean).trim());
         b.setCountryCode(XMLTools.readChildTag(xml, "Commodity", "Country_Code", rootBean).trim());
         b.setCountryName(XMLTools.readChildTag(xml, "Commodity", "Country_Name", rootBean).trim());
         b.setMarketYear(XMLTools.readChildTag(xml, "Commodity", "Market_Year", rootBean).trim());
         b.setMonth(XMLTools.readChildTag(xml, "Commodity", "Month", rootBean).trim());
         b.setUnitDescription(XMLTools.readChildTag(xml, "Commodity", "Unit_Description", rootBean).trim());
-        b.setUnitID(XMLTools.readChildTag(xml, "Commodity", "Unit_ID", rootBean).trim());
-        b.setValue(Double.valueOf(XMLTools.readChildTag(xml, "Commodity", "value", rootBean).trim()));
+        b.setUnitID(XMLTools.readChildTag(xml, "Commodity", "Unit_Id", rootBean).trim());
+        b.setValue(Double.valueOf(XMLTools.readChildTag(xml, "Commodity", "Value", rootBean).trim()));
         return b;
     }
 
