@@ -18,18 +18,20 @@ public class USDA {
         // Attributes
         attributes = new ArrayList<String>();
 //		attributes.add("001");						// Area Planted
-        attributes.add("004");                        // Area Harvested
-        attributes.add("007");                        // Crush
-        attributes.add("020");                        // Beginning Stocks
+//        attributes.add("004");                        // Area Harvested
+        attributes.add("4");                        // Area Harvested
+
+        attributes.add("7");                        // Crush
+        attributes.add("20");                        // Beginning Stocks
 //		attributes.add("022");						// Sow Beginning Stocks
-        attributes.add("028");                        // Production
+        attributes.add("28");                        // Production
 //		attributes.add("054");						// Rough Production
-        attributes.add("057");                        // Imports
+        attributes.add("57");                        // Imports
 //		attributes.add("064");						// Raw Imports
 //		attributes.add("071");						// Other Imports
-        attributes.add("081");                        // TY Imports
-        attributes.add("086");                        // Total Supply
-        attributes.add("088");                        // Exports
+        attributes.add("81");                        // TY Imports
+        attributes.add("86");                        // Total Supply
+        attributes.add("88");                        // Exports
 //		attributes.add("113");						// TY Exports
         attributes.add("125");                        // Domestic Consumption
 //		attributes.add("126");						// Total Disappearance
